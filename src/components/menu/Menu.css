@@ -1,0 +1,10 @@
+.Menu {
+    padding: 8px;
+    background-color: #f3b05a;
+}
+
+.Menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}

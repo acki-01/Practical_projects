@@ -1,0 +1,12 @@
+.MenuElement {
+    display: inline-block;
+    margin: 0 6px;
+    padding: 5px;
+    color: #a3586d;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.MenuElement:hover {
+    background-color: #f46a4e;
+}
