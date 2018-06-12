@@ -2,6 +2,8 @@
 
 import React, { PureComponent } from 'react';
 import './Project-container.css';
+import './syntax-highlight.css';
+
 class ProjectContainer extends PureComponent {
     render() {
         return (
@@ -17,6 +19,9 @@ class ProjectContainer extends PureComponent {
                     {this.props.buttonTitle}
                 </button>
                 <p>{this.props.answer}</p>
+                <div className="container">
+                    <pre className="container-code" dangerouslySetInnerHTML={this.props.implementation}></pre>
+                </div>
             </div>
         );
     }

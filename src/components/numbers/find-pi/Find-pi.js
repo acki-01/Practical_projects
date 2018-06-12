@@ -2,11 +2,15 @@
 
 import React, { Component } from 'react';
 import ProjectContainer from 'project-container/Project-container';
+import { computePI } from 'resources/functions-implementations/functions-implementations'
 
 class FindPi extends Component {
     constructor() {
         super();
-        this.state = { answer: '', value: 0 };
+        this.state = {
+            answer: '',
+            value: 0
+        };
     }
 
     handleChange(event) {
@@ -22,13 +26,12 @@ class FindPi extends Component {
     }
 
     computePI(n) {
-        console.log('computePi: ', n);
         let answer = parseInt(n, 10)
             ? 2 *
-              (
-                  Math.asin(Math.sqrt(1 - Math.pow(1, 2))) +
-                  Math.abs(Math.asin(1))
-              ).toFixed(n)
+            (
+                Math.asin(Math.sqrt(1 - Math.pow(1, 2))) +
+                Math.abs(Math.asin(1))
+            ).toFixed(n)
             : 'Wpisz liczbę całkowitą';
         this.setState(() => {
             return { answer: answer };
@@ -45,6 +48,7 @@ class FindPi extends Component {
                     clickHandler={() => this.computePI(this.state.value)}
                     buttonTitle="Find Pi"
                     answer={this.state.answer}
+                    implementation={computePI}
                 />
             </div>
         );
