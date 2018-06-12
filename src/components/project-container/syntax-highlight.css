@@ -1,0 +1,37 @@
+.container {
+    background: #272822;
+    overflow: auto;
+    width: auto;
+    border: solid gray;
+    border-width: .1em .1em .1em .8em;
+    padding: .2em .6em;
+}
+
+.container-code {
+    margin: 0;
+    line-height: 125%
+}
+
+.reserved-words {
+    color: #66d9ef;
+}
+
+.name {
+    color: #a6e22e;
+}
+
+.normal {
+    color: #f8f8f2;
+}
+
+.logic {
+    color: #f92672;
+}
+
+.number {
+    color: #ae81ff;
+}
+
+.string {
+    color: #e6db74;
+}
