@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import FindPi from 'numbers/find-pi/Find-pi';
 import FindE from 'numbers/find-e/Find-e';
 import Fibonacci from 'numbers/fibonacci/Fibonacci';
+import './Numbers.css';
 
 class Numbers extends Component {
     render() {

@@ -35,7 +35,7 @@ class FindE extends Component {
     }
     render() {
         return (
-            <div className="FindE">
+            <React.Fragment>
                 <ProjectContainer
                     title="Find e to the Nth Digit"
                     min="0"
@@ -45,7 +45,7 @@ class FindE extends Component {
                     buttonTitle="Find e"
                     answer={this.state.answer}
                 />
-            </div>
+            </React.Fragment>
         );
     }
 }

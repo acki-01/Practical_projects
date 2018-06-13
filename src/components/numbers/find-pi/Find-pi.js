@@ -39,7 +39,7 @@ class FindPi extends Component {
     }
     render() {
         return (
-            <div className="FindPi">
+            <React.Fragment>
                 <ProjectContainer
                     title="Find PI to the Nth Digit"
                     min="0"
@@ -50,7 +50,7 @@ class FindPi extends Component {
                     answer={this.state.answer}
                     implementation={computePI}
                 />
-            </div>
+            </React.Fragment>
         );
     }
 }

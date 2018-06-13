@@ -39,7 +39,7 @@ class Fibonacci extends Component {
 
     render() {
         return (
-            <div className="Fibonacci">
+            <React.Fragment>
                 <ProjectContainer
                     title="Fibonacci Sequence"
                     min="1"
@@ -49,7 +49,7 @@ class Fibonacci extends Component {
                     buttonTitle="Get Fibonacci Sequence"
                     answer={this.state.answer}
                 />
-            </div>
+            </React.Fragment>
         );
     }
 }

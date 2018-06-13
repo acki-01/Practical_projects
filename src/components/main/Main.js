@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import routes from 'resources/routes/routes';
 import COMPONENT_MAP from 'components/component_map';
+import './Main.css';
 
 class Main extends Component {
     render() {
