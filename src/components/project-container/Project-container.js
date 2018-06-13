@@ -1,6 +1,7 @@
 /** @format */
 
 import React, { PureComponent } from 'react';
+import Typed from 'react-typed';
 import './Project-container.css';
 import './syntax-highlight.css';
 
@@ -20,7 +21,12 @@ class ProjectContainer extends PureComponent {
                 </button>
                 <p>{this.props.answer}</p>
                 <div className="container">
-                    <pre className="container-code" dangerouslySetInnerHTML={this.props.implementation}></pre>
+                    <pre className="container-code">
+                        <Typed
+                            strings={[`${this.props.implementation}`]}
+                            typeSpeed={10}
+                        />
+                    </pre>
                 </div>
             </div>
         );
