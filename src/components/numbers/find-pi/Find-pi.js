@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import ProjectContainer from 'project-container/Project-container';
-import { computePI } from 'resources/functions-implementations/functions-implementations'
+import { computePI } from 'resources/functions-implementations'
 
 class FindPi extends Component {
     constructor() {

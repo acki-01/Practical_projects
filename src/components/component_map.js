@@ -1,6 +1,6 @@
 /** @format */
 
-import Numbers from 'numbers/Numbers';
+import Numbers from './numbers/Numbers';
 import Algorithms from 'algorithms/Algorithms';
 
 const COMPONENT_MAP = {
