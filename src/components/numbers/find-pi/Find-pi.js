@@ -13,37 +13,24 @@ export default class FindPi extends Component {
 
     handleChange(event) {
         const value = parseInt(event.target.value, 10);
-        if (isValid(value)) {
-            this.setState({ value: event.target.value });
-        } else {
-            event.target.value = '';
-            this.setState(() => {
-                return { answer: 'Podaj liczbę całkowitą z przedziału 0-20' };
-            });
+        if (!value) {
+            return 0;
         }
-    }
-
-    computePI(n) {
-        let answer = parseInt(n, 10)
-            ? 2 *
-            (
-                Math.asin(Math.sqrt(1 - Math.pow(1, 2))) +
-                Math.abs(Math.asin(1))
-            ).toFixed(n)
-            : 'Wpisz liczbę całkowitą';
+        const pi = (2 * (Math.asin(Math.sqrt(1 - Math.pow(1, 2))) + Math.abs(Math.asin(1)))).toString();
+        const piWithPrec = `${pi.substring(0, pi.indexOf('.') + 1)}${pi.substring((pi.indexOf('.') + 1), value + 2)}`
         this.setState(() => {
-            return { answer: answer };
+            return { answer: piWithPrec };
         });
     }
+
     render() {
         return (
             <React.Fragment>
                 <ProjectContainer
                     title="Find PI to the Nth Digit"
                     min="0"
-                    max="20"
+                    max="15"
                     changeHandler={this.handleChange.bind(this)}
-                    clickHandler={() => this.computePI(this.state.value)}
                     buttonTitle="Find Pi"
                     answer={this.state.answer}
                     implementation={computePI}
@@ -52,7 +39,3 @@ export default class FindPi extends Component {
         );
     }
 }
-
-// isValid: Int -> Boolean
-const isValid = (value) =>
-    value && value >= 0 && value <= 20 && value % 1 === 0;

@@ -42,8 +42,6 @@ export default class Fibonacci extends Component {
                     min="1"
                     max="40"
                     changeHandler={this.handleChange.bind(this)}
-                    clickHandler={() => this.clickHandler(this.state.value)}
-                    buttonTitle="Get Fibonacci Sequence"
                     answer={this.state.answer}
                 />
             </React.Fragment>

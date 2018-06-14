@@ -22,10 +22,8 @@ export default class ProjectContainer extends Component {
     render() {
         ProjectContainer.propTypes = {
             answer: PropTypes.string,
-            buttonTitle: PropTypes.string,
             changeHandler: PropTypes.func,
-            clickHandler: PropTypes.func,
-            implementation: PropTypes.bool,
+            implementation: PropTypes.string,
             max: PropTypes.string,
             min: PropTypes.string,
             title: PropTypes.string
@@ -51,9 +49,6 @@ export default class ProjectContainer extends Component {
                         onChange={this.props.changeHandler}
                     />
                     <p className="answer white">{this.props.answer}</p>
-                    <button className="fn-caller" onClick={this.props.clickHandler}>
-                        {this.props.buttonTitle}
-                    </button>
                     <button className="impl-toggler" onClick={() => this.impToggler(this.state.isImplementation)}>
                         Implementation
                     </button>
