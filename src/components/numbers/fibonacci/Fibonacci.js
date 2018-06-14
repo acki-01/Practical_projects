@@ -3,11 +3,8 @@
 import React, { Component } from 'react';
 import ProjectContainer from 'project-container/Project-container';
 
-class Fibonacci extends Component {
-    constructor() {
-        super();
-        this.state = { answer: '', value: 0 };
-    }
+export default class Fibonacci extends Component {
+    state = { answer: '', value: 0 };
 
     handleChange(event) {
         const value = parseInt(event.target.value, 10);
@@ -57,5 +54,3 @@ class Fibonacci extends Component {
 // isValid: Int -> Boolean
 const isValid = (value) =>
     value && value >= 0 && value <= 40 && value % 1 === 0;
-
-export default Fibonacci;

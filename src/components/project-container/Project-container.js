@@ -2,10 +2,11 @@
 
 import React, { Component } from 'react';
 import Typed from 'react-typed';
+
 import './Project-container.css';
 import './syntax-highlight.css';
 
-class ProjectContainer extends Component {
+export default class ProjectContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -18,7 +19,7 @@ class ProjectContainer extends Component {
     }
 
     render() {
-        const implementation = this.state.isImplementation ? 
+        const implementation = this.state.isImplementation ?
             <div className="code-container">
                 <pre className="code-placeholder">
                     <Typed
@@ -50,5 +51,3 @@ class ProjectContainer extends Component {
         );
     }
 }
-
-export default ProjectContainer;

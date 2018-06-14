@@ -1,17 +1,15 @@
 /** @format */
 
 import React, { Component } from 'react';
+
 import ProjectContainer from 'project-container/Project-container';
 import { computePI } from 'resources/functions-implementations'
 
-class FindPi extends Component {
-    constructor() {
-        super();
-        this.state = {
-            answer: '',
-            value: 0
-        };
-    }
+export default class FindPi extends Component {
+    state = {
+        answer: '',
+        value: 0
+    };
 
     handleChange(event) {
         const value = parseInt(event.target.value, 10);
@@ -58,5 +56,3 @@ class FindPi extends Component {
 // isValid: Int -> Boolean
 const isValid = (value) =>
     value && value >= 0 && value <= 20 && value % 1 === 0;
-
-export default FindPi;
