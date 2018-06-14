@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import Typed from 'react-typed';
+import PropTypes from 'prop-types';
 
 import './Project-container.css';
 import './syntax-highlight.css';
@@ -19,6 +20,17 @@ export default class ProjectContainer extends Component {
     }
 
     render() {
+        ProjectContainer.propTypes = {
+            answer: PropTypes.string,
+            buttonTitle: PropTypes.string,
+            changeHandler: PropTypes.func,
+            clickHandler: PropTypes.func,
+            implementation: PropTypes.bool,
+            max: PropTypes.string,
+            min: PropTypes.string,
+            title: PropTypes.string
+        }
+
         const implementation = this.state.isImplementation ?
             <div className="code-container">
                 <pre className="code-placeholder">
@@ -38,13 +50,13 @@ export default class ProjectContainer extends Component {
                         max={this.props.max}
                         onChange={this.props.changeHandler}
                     />
+                    <p className="answer white">{this.props.answer}</p>
                     <button className="fn-caller" onClick={this.props.clickHandler}>
                         {this.props.buttonTitle}
                     </button>
                     <button className="impl-toggler" onClick={() => this.impToggler(this.state.isImplementation)}>
                         Implementation
                     </button>
-                    <p className="white">{this.props.answer}</p>
                 </div>
                 {implementation}
             </div>

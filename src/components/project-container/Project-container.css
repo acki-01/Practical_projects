@@ -30,12 +30,13 @@ box-shadow: 15px 15px 15px 0px rgba(222,196,173,1);
     color: white;
 }
 
-input {
-    margin-bottom: 20px;
-}
-
 button {
     display: block;
-    width: 25%;
+    padding: 2px;
     margin: 5px 0;
+}
+
+.answer {
+    height: 10px;
+    margin-bottom: 20px;    
 }
