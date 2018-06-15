@@ -11,8 +11,25 @@ export default class ProjectContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isImplementation: false
-        }
+            isImplementation: false,
+        };
+
+        ProjectContainer.propTypes = {
+            answer: PropTypes.string,
+            changeHandler: PropTypes.func,
+            implementation: PropTypes.string,
+            max: PropTypes.string,
+            min: PropTypes.string,
+            title: PropTypes.string,
+        };
+
+        ProjectContainer.defaultProps = {
+            answer: '',
+            implementation: '',
+            max: '',
+            min: '',
+            title: '',
+        };
     }
 
     impToggler(isImplementation) {
@@ -20,16 +37,7 @@ export default class ProjectContainer extends Component {
     }
 
     render() {
-        ProjectContainer.propTypes = {
-            answer: PropTypes.string,
-            changeHandler: PropTypes.func,
-            implementation: PropTypes.string,
-            max: PropTypes.string,
-            min: PropTypes.string,
-            title: PropTypes.string
-        }
-
-        const implementation = this.state.isImplementation ?
+        const implementation = this.state.isImplementation ? (
             <div className="code-container">
                 <pre className="code-placeholder">
                     <Typed
@@ -37,10 +45,13 @@ export default class ProjectContainer extends Component {
                         typeSpeed={10}
                     />
                 </pre>
-            </div> : '';
+            </div>
+        ) : (
+            ''
+        );
         return (
             <div className="ProjectContainer">
-                <div className='left-container'>
+                <div className="left-container">
                     <h3 className="title white">{this.props.title}</h3>
                     <input
                         type="number"
@@ -49,7 +60,11 @@ export default class ProjectContainer extends Component {
                         onChange={this.props.changeHandler}
                     />
                     <p className="answer white">{this.props.answer}</p>
-                    <button className="impl-toggler" onClick={() => this.impToggler(this.state.isImplementation)}>
+                    <button
+                        className="impl-toggler"
+                        onClick={() =>
+                            this.impToggler(this.state.isImplementation)
+                        }>
                         Implementation
                     </button>
                 </div>

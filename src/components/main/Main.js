@@ -1,19 +1,14 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+/** @format */
 
-import routes from 'resources/routes/routes';
-import COMPONENT_MAP from 'components/component_map';
+import React from 'react';
+
+import Routes from 'components/core/Routes';
 import './Main.css';
 
 export default function Main() {
-    const componentsRoutes = routes.map(r => {
-        return <Route path={'/' + r.path} background={r.bg} key={r.pageId} component={COMPONENT_MAP[r.component]} />
-    })
     return (
         <div className="Main">
-            <Switch>
-                {componentsRoutes}
-            </Switch>
+            <Routes />
         </div>
     );
 }
