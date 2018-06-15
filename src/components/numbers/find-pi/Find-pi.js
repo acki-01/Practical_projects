@@ -17,7 +17,7 @@ export default class FindPi extends Component {
             return 0;
         }
         const pi = (2 * (Math.asin(Math.sqrt(1 - Math.pow(1, 2))) + Math.abs(Math.asin(1)))).toString();
-        const piWithPrec = `${pi.substring(0, pi.indexOf('.') + 1)}${pi.substring((pi.indexOf('.') + 1), value + 2)}`
+        const piWithPrec = `${pi.substring(0, (pi.indexOf('.') + 1 + value))}`;
         this.setState(() => {
             return { answer: piWithPrec };
         });
@@ -28,7 +28,7 @@ export default class FindPi extends Component {
             <React.Fragment>
                 <ProjectContainer
                     title="Find PI to the Nth Digit"
-                    min="0"
+                    min="1"
                     max="15"
                     changeHandler={this.handleChange.bind(this)}
                     buttonTitle="Find Pi"
